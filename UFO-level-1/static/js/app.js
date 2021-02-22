@@ -1,38 +1,40 @@
 // From data.js
 var tableData = data;
 
-// Get a reference to the table body
-var tbody = d3.select("tbody");
-
-// Console.log the weather data from data.js
-console.log(data);
-
 // Loop through `data` and console.log each UFO sighting object
-data.forEach(function(ufoSighting) {
-    console.log(ufoSighting);
+function displayTable(ufoSighting) {
+
+    // Get a reference to the table body
+    var tbody = d3.select("tbody");
 
     // Append one table row for each UFO sighting object
     var row = tbody.append("tr");
 
-    // Console.log each UFO sighting value and append 1 cell per UFO sighting value
+    // For each UFO sighting value append 1 cell
     Object.entries(ufoSighting).forEach(function([key,value]) {
         var cell = row.append("td");
 
         // Update each cell's text with UFO sighting values
         cell.text(value);
     });
-});
+}
+
+// Display the full data table
+tableData.forEach(displayTable);
 
 // Select the form and button
 var button = d3.select("#filter-btn");
 var form = d3.select("#form");
 
 // Event handlers for clicking the button or pressing the enter key
-button.on("click", runEnter);
-form.on("submit", runEnter);
+button.on("click", runFilter);
+form.on("submit", runFilter);
 
 // Function to run both events
-function runEnter() {
+function runFilter() {
+
+    // Remove the full data table
+    d3.select("tbody").html("");
     
     // Prevent the page from refreshing
     d3.event.preventDefault();
@@ -46,9 +48,13 @@ function runEnter() {
     console.log(inputValue);
     console.log(tableData);
 
-    var filteredData = tableData.filter(table => table.datetime === inputValue);
+    // Filter the data table by value selected
+    var filteredData = tableData.filter(data => data.datetime === inputValue);
 
     console.log(filteredData);
+
+    // Display the filtered table data
+    filteredData.forEach(displayTable);
 }
 
 
