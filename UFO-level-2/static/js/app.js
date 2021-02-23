@@ -10,7 +10,7 @@ function displayTable(ufoSighting) {
     // Append one table row for each UFO sighting object
     var row = tbody.append("tr");
 
-    // For each UFO sighting value append 1 cell with the data
+    // For each UFO sighting value append 1 cell
     Object.entries(ufoSighting).forEach(function([key,value]) {
         var cell = row.append("td");
 
