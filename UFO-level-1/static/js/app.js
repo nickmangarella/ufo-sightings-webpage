@@ -1,7 +1,7 @@
 // From data.js
 var tableData = data;
 
-// Loop through `data` and console.log each UFO sighting object
+// Loop through each UFO sighting object in the data
 function displayTable(ufoSighting) {
 
     // Get a reference to the table body
@@ -10,7 +10,7 @@ function displayTable(ufoSighting) {
     // Append one table row for each UFO sighting object
     var row = tbody.append("tr");
 
-    // For each UFO sighting value append 1 cell with the data
+    // For each UFO sighting value append 1 cell
     Object.entries(ufoSighting).forEach(function([key,value]) {
         var cell = row.append("td");
 
@@ -45,12 +45,14 @@ function runFilter() {
     // Get the value property of the input element
     var inputValue = inputElement.property("value");
 
+    // Log the elements and values
+    console.log(inputElement);
     console.log(inputValue);
-    console.log(tableData);
 
     // Filter the data table by value selected
     var filteredData = tableData.filter(data => data.datetime === inputValue);
 
+    // Log the filtered table data
     console.log(filteredData);
 
     // Display the filtered table data
