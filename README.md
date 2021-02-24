@@ -104,7 +104,7 @@ function runFilter() {
 ## UFO-level-2
 
 ### app.js
-Steps 1:
+Step 1:
 * Created a reference to the data 
 * Created a function called 'displayTable' to loop through each UFO sighting object and add the data to a table on the webpage
 * Grabbed a reference to the table body
