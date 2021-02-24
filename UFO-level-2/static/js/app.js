@@ -66,7 +66,12 @@ function runFilter() {
     console.log(inputShape);
 
     // Filter the data table by value selected
-    var filteredData = tableData.filter(data => data.datetime === inputDate && data.city === inputCity && data.state === inputState && data.country === inputCountry && data.shape === inputShape);
+    var filteredData = tableData.filter(data => 
+        data.datetime === inputDate && 
+        data.city === inputCity && 
+        data.state === inputState && 
+        data.country === inputCountry && 
+        data.shape === inputShape);
 
     // Log the filtered table data
     console.log(filteredData);
