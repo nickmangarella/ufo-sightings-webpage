@@ -1,4 +1,4 @@
-# JavaScript-Challenge
+# ufo-sightings-webpage
 
 ## Description
 Utilizing JavaScript and D3.js to display a table of UFO sightings data on a webpage that is filterable by date and another webpage filterable by date, city, state, country, and shape. 
